@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ tenant.name }} - Tenant Detail</h2>
+  <p>Address: {{ tenant.address }}</p>
+  <p>Document Proofs: {{ tenant.document_proofs }}</p>
+
+  <h3>Leases</h3>
+  <ul>
+    {% for lease in leases %}
+      <li>Property: {{ lease.unit.property.name }} - Unit: {{ lease.unit.bedroom_type }} - Rent: {{ lease.unit.rent_cost }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}

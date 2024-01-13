@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>{{ property.name }} - Property Detail</h2>
+  <p>Address: {{ property.address }}</p>
+  <p>Location: {{ property.location }}</p>
+  <p>Features: {{ property.features }}</p>
+
+  <h3>Units</h3>
+  <ul>
+    {% for unit in units %}
+      <li>{{ unit.bedroom_type }} - Rent: {{ unit.rent_cost }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
